@@ -1,0 +1,130 @@
+---
+title: "사건 파일 #아구스 사망사건"
+author: "JW&SW"
+format:
+  html:
+    theme: darkly
+    fontsize: 1.3em
+---
+
+```{=html}
+<style>
+.card {
+  background-color: rgba(255,255,255,0.05);  /* 살짝 밝은 느낌만 */
+  color: inherit;  /* darkly의 흰 글씨 유지 */
+  border-left: 6px solid #e53935;
+  padding: 1em;
+  margin-bottom: 2em;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.quiz-box {
+  background-color: rgba(255,255,255,0.03);
+  color: inherit;
+  border-left: 6px solid #e53935;
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(255,255,255,0.05);
+}
+
+.quiz-box button {
+  background-color: #e53935;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+</style>
+```
+
+## 🕵️ Stage1  아구스의 공장
+
+::: card
+<p><strong>현장 조사 기록:</strong></p>
+
+<ul>
+
+<li>이름: 아구스</li>
+
+<li>직업: 석회석 가마 근로자</li>
+
+<li>특징:</li>
+
+-   가족의 증언에 따르면 기침이 잦았음, 동료가 병원에 방문할 것을 권유하였으나 '피곤해서 그런 것'이라며 넘겼다고 함
+
+</ul>
+:::
+
+### 🏠 **자와자와 마을**
+
+::: card
+<img src="자와자와마을.png" width="700"/>
+:::
+
+<br> 여기가 인도네시아 자와자와 마을이군...<br><br>
+
+그런데 여기 공기는 왜 이렇게 탁하지? 곳곳에서 까만 연기도 보이는군<br><br>
+
+저곳이 아구스씨가 일했던 석회석 가마 공장인가? 저쪽으로 한번 가보자!<br><br><br><br>
+
+### 🏃**석회석 가마**
+
+::: card
+<img src="석회석가마.jpg" width="700"/>
+:::
+
+<br> 여기가 아구스씨가 일했던 곳이군.<br><br>
+
+여기도 공기가 너무 안 좋은걸? 시커먼 연기도 나고.<br><br>
+
+저기 보이는 게 창고 같은데 한 번 가보자!<br><br><br><br>
+
+### 🏃**석회석 가마 창고**
+
+::: card
+<img src="창고자물쇠.jpg" width="700"/>
+:::
+
+문이 잠겨 있네<br><br>
+
+가마 공장에서 비밀번호에 대한 힌트를 찾아보자<br><br><br><br>
+
+
+
+### ❓ 문제
+
+:::: quiz-box
+<form id="short-answer-form">
+  <label for="q1">가마 공장 창고 비밀번호는 무엇일까?</label><br><br>
+  <input type="text" id="short-answer" placeholder="정답을 입력하세요" style="width: 60%; padding: 6px; font-size: 1em;"><br><br>
+  <button type="button" onclick="checkShortAnswer()">제출</button>
+</form>
+
+<div id="short-feedback" style="margin-top:1em;"></div>
+::::
+
+<!-- 스타일과 스크립트는 문서 아래쪽 또는 head 근처에 둬도 됩니다 -->
+
+<script>
+function checkShortAnswer() {
+  const input = document.getElementById("short-answer").value.trim().toLowerCase();
+  const feedback = document.getElementById("short-feedback");
+
+  if (input === "4012") {
+    feedback.innerHTML = `
+      ✅ 창고 문이 열렸다!<br>
+      👉 <a href="stage2.html">[다음 스테이지로 이동]</a>
+    `;
+    feedback.style.color = "green";
+
+  } else if (input === "") {
+    feedback.innerHTML = "⛔ 답을 입력하세요.";
+    feedback.style.color = "orange";
+  } else {
+    feedback.innerHTML = "❌ 오답입니다. 다시 시도해보세요.";
+    feedback.style.color = "red";
+  }
+}
+</script>
+
